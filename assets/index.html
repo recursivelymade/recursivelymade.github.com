@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Playful digital experiences and open source software by Recursively made</title>
+    <meta name="description" content="Recursively Made create playful digital experiences">
+    <meta name="author" content="Recursively Made">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0">
+	<meta name="robots" content="NOODP,NOYDIR" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles provided by Bootstrap, https://github.com/twitter/bootstrap it's the business -->
+    <link href="/assets/bootstrap.css" rel="stylesheet">
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26777516-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+	rmade = {
+		recordOutboundLink: function(link) {
+			var action = link.href;
+			var s = action.split('/');
+			action = s[2];
+
+			_gat._getTrackerByName()._trackEvent('Outbound Links', action);
+			setTimeout('document.location = "' + link.href + '"', 100);
+		},
+		
+		setOutboundLinks: function() {
+			var links = $(".external");
+			for (var i = 0, len = links.length; i < len; i++) {
+				$(links[i]).on('click', function(event) {
+					event.preventDefault();
+					rmade.recordOutboundLink(this);
+				});
+			}
+		},
+		
+		init: function() {
+			rmade.setOutboundLinks();
+		}
+	}
+	
+	$(document).ready(function(){
+		rmade.init();
+	});
+	</script>
+	
+  </head>
+
+  <body>
+    <div class="container">
+    
+	<section>
+      <div class="hero-unit">
+        <h1>Recursively made</h1> 
+        <h2>Playful digital experiences</h2>
+      </div>
+	</section>
+
+
+	<section>
+      <div class="row">
+      
+        <div class="span11">
+        
+        
+        
+		</div>
+		
+        <div class="span5">
+        	<h3>By the way</h3>
+        	<p>You can also talk to us and see some of the things we do on;</p>
+        	<ul>
+        		<li style="background-image: url('/images/{{ version }}/twitter.png');" rel="me"><a href="http://twitter.com/recursivelymade" class="external">Twitter</a></li>
+        		<li style="background-image: url('/images/{{ version }}/linkedin.png');" rel="me"><a href="http://linkedin.com/company/recursively-made" class="external">LinkedIn</a></li>
+        		<li style="background-image: url('/images/{{ version }}/github.png');" rel="me"><a href="https://github.com/organizations/recursivelymade" class="external">GitHub</a></li>
+        	</ul>
+        </div>
+        
+      </div> <!-- /row -->
+	</section>
+	
+      <footer>
+		<div class="row">
+			<div class="span8">
+				<h3>&copy; Recursively Made limited</h3>
+				<p>Recursively Made is a limited company registered in England and Wales.<p>
+				<p>Company Registration No. 7793564</p>
+				<p>VAT No. 121417948</p>
+			</div>
+			<div class="span8">
+				<p>
+					<strong>Registered Offices</strong>
+					<address>
+					2nd Floor, <br />
+					43 Broomfield Road, <br />
+					Chelmsford, <br />
+					Essex, <br />
+					CM1 1SY
+					</address>
+				</p>
+			</div>
+		</div>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+<!--
+
+er, hi.      /)
+       __   /;<
+  w  c(..)o/;;<
+   \__(-) /;;;<
+       /\/;;;< 
+    w_/(_);;/
+        /\
+        \ \
+        m  m 
+-->
