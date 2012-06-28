@@ -1,0 +1,36 @@
+body {
+	padding-top: 30px;
+}
+
+ul a {
+	display: inline-block;
+	min-height: 20px;
+	padding-left: 22px;
+}
+
+ul li {
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	margin-bottom: 0.3em;
+	line-height: 20px;
+}
+h1 {
+	color:#fff;
+	text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.5);
+}
+.hero-unit h2 {
+	color:#fff;
+}
+
+.hero-unit {
+	background: #3366aa;
+	background: -moz-radial-gradient(center, ellipse cover,  #3366aa 0%, #225588 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3366aa), color-stop(100%,#225588));
+	background: -webkit-radial-gradient(center, ellipse cover,  #3366aa 0%,#225588 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #3366aa 0%,#225588 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #3366aa 0%,#225588 100%);
+	background: radial-gradient(center, ellipse cover,  #3366aa 0%,#225588 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3366aa', endColorstr='#225588',GradientType=1 );
+	color:#fff;
+}
