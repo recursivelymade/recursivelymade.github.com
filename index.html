@@ -32,6 +32,8 @@
 
 	<script type="text/javascript">
 	rmade = {
+		githubOrg: "recursivelymade",
+		
 		recordOutboundLink: function(link) {
 			var action = link.href;
 			var s = action.split('/');
@@ -51,8 +53,31 @@
 			}
 		},
 		
+		customURLs: {
+			"nitch.js": "http://twitter.github.com/bootstrap/"
+		},
+	
+		repoUrl: function(repo) {
+			return rmade.customURLs[repo.name] || repo.html_url;
+		},
+	
+		listRepo: function(repo) {
+			$("#repos").append('<div class="span4"><h3><a href="'+rmade.repoUrl(repo)+'">'+repo.name+'</a></h3><p>'+repo.description+'</p></div>');
+		},
+		
+		gitRepos: function() {
+			$.getJSON("https://api.github.com/orgs/"+rmade.githubOrg+"/repos?callback=?", function(result) {
+				var repos = result.data;
+	
+				$.each(repos, function (i, repo) {
+					rmade.listRepo(repo);
+				});
+			});	
+		},
+		
 		init: function() {
 			rmade.setOutboundLinks();
+			rmade.gitRepos();
 		}
 	}
 	
@@ -77,19 +102,15 @@
 	<section>
       <div class="row">
       
-        <div class="span11">
-        
-        
-        
-		</div>
+        <div id="repos" class="span8"></div>
 		
-        <div class="span5">
+        <div class="span4">
         	<h3>By the way</h3>
         	<p>You can also talk to us and see some of the things we do on;</p>
         	<ul>
-        		<li style="background-image: url('/images/{{ version }}/twitter.png');" rel="me"><a href="http://twitter.com/recursivelymade" class="external">Twitter</a></li>
-        		<li style="background-image: url('/images/{{ version }}/linkedin.png');" rel="me"><a href="http://linkedin.com/company/recursively-made" class="external">LinkedIn</a></li>
-        		<li style="background-image: url('/images/{{ version }}/github.png');" rel="me"><a href="https://github.com/organizations/recursivelymade" class="external">GitHub</a></li>
+        		<li style="background-image: url('/asset/twitter.png');" rel="me"><a href="http://twitter.com/recursivelymade" class="external">Twitter</a></li>
+        		<li style="background-image: url('/asset/linkedin.png');" rel="me"><a href="http://linkedin.com/company/recursively-made" class="external">LinkedIn</a></li>
+        		<li style="background-image: url('/asset/github.png');" rel="me"><a href="https://github.com/organizations/recursivelymade" class="external">GitHub</a></li>
         	</ul>
         </div>
         
@@ -99,20 +120,21 @@
       <footer>
 		<div class="row">
 			<div class="span8">
-				<h3>&copy; Recursively Made limited</h3>
+				<h3>&copy; Recursively Made Limited, 2012</h3>
 				<p>Recursively Made is a limited company registered in England and Wales.<p>
 				<p>Company Registration No. 7793564</p>
 				<p>VAT No. 121417948</p>
 			</div>
-			<div class="span8">
+			<div class="span4">
 				<p>
 					<strong>Registered Offices</strong>
-					<address>
-					2nd Floor, <br />
-					43 Broomfield Road, <br />
-					Chelmsford, <br />
-					Essex, <br />
-					CM1 1SY
+					<address itemscope itemtype="schema.org/PostalAddress">
+						<span itemprop="streetAddress">
+						2nd Floor, <br />
+						43 Broomfield Road</span>, <br />
+						<span itemprop="addressLocality">Chelmsford</span>, <br />
+						<span itemprop="postalCode">Essex</span>, <br />
+						<span itemprop="postalCode">CM1 1SY</span>
 					</address>
 				</p>
 			</div>
